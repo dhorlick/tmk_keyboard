@@ -54,8 +54,23 @@ uint8_t remix_loop(void)
 
     if (mse_parser1.time_stamp != last_time_stamp_mse_1)
     {
-        mse_parser1.report.h = mse_parser1.report.x / 2;
-        mse_parser1.report.v = - mse_parser1.report.y / 2;
+        if (mse_parser1.report.x >= -1 && mse_parser1.report.x <= 1)
+        {
+            mse_parser1.report.v = mse_parser1.report.x;
+        }
+        else
+        {
+            mse_parser1.report.h = mse_parser1.report.x / 2;
+        }
+
+        if (mse_parser1.report.y >= -1 && mse_parser1.report.y <= 1)
+        {
+            mse_parser1.report.v = - mse_parser1.report.y;
+        }
+        else
+        {
+            mse_parser1.report.v = - mse_parser1.report.y / 2;
+        }
         mse_parser1.report.x = 0;
         mse_parser1.report.y = 0;
         switch (mse_parser1.report.buttons)
