@@ -12,6 +12,9 @@ USB_HOST_SHIELD_SRC = \
 	$(USB_HOST_SHIELD_DIR)/parsetools.cpp \
 	$(USB_HOST_SHIELD_DIR)/message.cpp 
 
+ifdef MIDI_ENABLE
+    USB_HOST_SHIELD_SRC += $(USB_HOST_SHIELD_DIR)/usbh_midi.cpp
+endif
 
 
 #

@@ -1,0 +1,5 @@
+TARGET = keymapless_usb_usb_debug
+#KEYMAP_SECTION_ENABLE = yes
+#LUFA_DEBUG = yes
+OPT_DEFS += -DDEBUG_USB_HOST
+include Makefile
